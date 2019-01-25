@@ -1,0 +1,35 @@
+@import '../node_modules/bulma/bulma.sass';
+// @charset "utf-8";
+
+@import "../node_modules/bulma-extensions/bulma-accordion/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-badge/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-calendar/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-carousel/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-checkradio/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-divider/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-iconpicker/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-pageloader/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-pricingtable/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-quickview/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-ribbon/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-slider/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-steps/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-switch/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-tagsinput/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-timeline/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-tooltip/src/sass/index.sass";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
