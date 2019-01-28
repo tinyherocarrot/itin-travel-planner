@@ -33,9 +33,12 @@ const move = (source, destination, droppableSource, droppableDestination) => {
 }
 
 class App extends Component {
+  // source arrays eventually live in Redux store
   state = {
-    items: getItems(2),
-    selected: getItems(5, 10)
+    ideas: getItems(2),
+    plans1: getItems(5, 10),
+    plans2: getItems(5, 10),
+    plans3: getItems(5, 10)
   };
 
   /**
@@ -44,12 +47,15 @@ class App extends Component {
     * source arrays stored in the state.
     */
   id2List = {
-      droppable: 'items',
-      droppable2: 'selected'
+      droppable: 'ideas',
+      droppable2: 'plans1',
+      droppable3: 'plans2',
+      droppable4: 'plans3'
   };
 
   getList = id => this.state[this.id2List[id]];
   
+  //FIXME: rewrite to allow for many lists
   onDragEnd = result => {
     const { source, destination } = result
 
@@ -58,6 +64,7 @@ class App extends Component {
       return
     }
 
+    // dropped in the same list
     if (source.droppableId === destination.droppableId) {
       const items = reorder(
         this.getList(source.droppableId),
@@ -65,25 +72,25 @@ class App extends Component {
         destination.index
       )
 
-      let state = { items }
+      this.setState(
+        { [this.id2List[source.droppableId]]: items }
+      )
 
-      if (source.droppableId === "droppable2") {
-        state = { selected: items }
-      }
-
-      this.setState(state)
     } else {
+
+      // dropped in a different list
       const result = move(
         this.getList(source.droppableId),
         this.getList(destination.droppableId),
         source,
         destination
       )
-
-      this.setState({
-        items: result.droppable,
-        selected: result.droppable2
-      })
+      const newState = {
+        [this.id2List[source.droppableId]]: result[source.droppableId],
+        [this.id2List[destination.droppableId]]: result[destination.droppableId]
+      }
+      // debugger
+      this.setState(newState)
     }
   }
 
@@ -92,8 +99,8 @@ class App extends Component {
   render() {
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
-        <Ideas items={this.state.items}/>
-        <Plans items={this.state.selected}/>
+        <Ideas items={this.state.ideas}/>
+        <Plans items={this.state.plans1}/>
       </DragDropContext>
     )
   }

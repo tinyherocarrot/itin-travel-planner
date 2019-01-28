@@ -8,7 +8,6 @@ import { Droppable, Draggable } from "react-beautiful-dnd"
 import { Card } from "semantic-ui-react"
 
 class DayCard extends Component {
-  // functionalRef = null 
   render() {
     const { index, items } = this.props
 
@@ -32,7 +31,7 @@ class DayCard extends Component {
                         draggableStyle={provided.draggableProps.style}
                       >
                         <Card.Content>
-                          <Card.Header>Molly Thomas</Card.Header>
+                          <Card.Header>{item.id}</Card.Header>
                           <Card.Meta>New User</Card.Meta>
                           <Card.Description>
                             Molly wants to add you to the group <strong>musicians</strong>

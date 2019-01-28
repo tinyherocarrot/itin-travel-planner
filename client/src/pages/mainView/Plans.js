@@ -11,6 +11,7 @@ const days = ["Monday", "Tuesday", "Wednesday"]
 
 class Plans extends Component {
   render() {
+    // console.log(this.props.items)
     return (
       <Container isFluid style={{ marginTop: 10 }}>
         {/** 

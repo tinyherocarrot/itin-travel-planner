@@ -31,7 +31,7 @@ class Ideas extends Component {
                         draggableStyle={provided.draggableProps.style}
                       >
                         <Card.Content>
-                          <Card.Header>Molly Thomas</Card.Header>
+                          <Card.Header>{item.id}</Card.Header>
                           <Card.Meta>New User</Card.Meta>
                           <Card.Description>
                             Molly wants to add you to the group <strong>musicians</strong>
