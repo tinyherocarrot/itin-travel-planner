@@ -7,8 +7,7 @@ import { Container, Card } from "semantic-ui-react"
 import { getListStyle, getItemStyle } from "../../utils/draggableUtils"
 
 class Ideas extends Component {
-  
-  render () {
+  render() {
     const { items } = this.props
 
     return (
@@ -24,17 +23,19 @@ class Ideas extends Component {
                     <div
                       ref={provided.innerRef}
                       {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                    >
-                      <Card 
+                      {...provided.dragHandleProps}>
+                      <Card
                         isdragging={snapshot.isDragging}
                         draggableStyle={provided.draggableProps.style}
-                      >
+                        style={{
+                          margin: "10px"
+                        }}>
                         <Card.Content>
                           <Card.Header>{item.id}</Card.Header>
                           <Card.Meta>New User</Card.Meta>
                           <Card.Description>
-                            Molly wants to add you to the group <strong>musicians</strong>
+                            Molly wants to add you to the group{" "}
+                            <strong>musicians</strong>
                           </Card.Description>
                         </Card.Content>
                       </Card>

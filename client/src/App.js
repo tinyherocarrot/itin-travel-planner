@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { DragDropContext } from "react-beautiful-dnd"
+import { Divider } from "semantic-ui-react"
 
 // internal components
 import Ideas from "./pages/mainView/Ideas"
@@ -36,9 +37,9 @@ class App extends Component {
   // source arrays eventually live in Redux store
   state = {
     ideas: getItems(2),
-    plans1: getItems(5, 10),
+    plans1: getItems(5, 5),
     plans2: getItems(5, 10),
-    plans3: getItems(5, 10)
+    plans3: getItems(5, 15)
   };
 
   /**
@@ -97,10 +98,12 @@ class App extends Component {
   // Normally you would want to split things out into separate components.
   // But in this example everything is just done in one place for simplicity
   render() {
+    const { ideas, plans1, plans2, plans3 } = this.state
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
-        <Ideas items={this.state.ideas}/>
-        <Plans items={this.state.plans1}/>
+        <Ideas items={ideas}/>
+        <Divider/>
+        <Plans items={{ plans1, plans2, plans3 }}/>
       </DragDropContext>
     )
   }

@@ -25,4 +25,5 @@ export const getListStyle = isDraggingOver => ({
   display: 'flex',
   padding: grid,
   overflow: 'auto',
+  "min-height": "200px"
 })
